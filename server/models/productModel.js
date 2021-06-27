@@ -26,7 +26,7 @@ const schema = new mongoose.Schema({
         type:Number,
         required:true,
     },
-    catergorytype:{
+    img_url:{
         type:String,
         required:true,
     }

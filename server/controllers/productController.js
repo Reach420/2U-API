@@ -20,7 +20,7 @@ const timenow = day + '||' + month + '||' + year
         timecreated:  timenow,
         discount: req.body.description,
         instock: req.body.instock,
-        categorytype: req.body.categorytype,
+        img_url: req.body.img_url,
     })
     product.save(product)
     .then(data=>{
@@ -29,6 +29,104 @@ const timenow = day + '||' + month + '||' + year
         res.status(500).send({
             message : err.message || "Some error occurred while creating a create operation"
         });
+    })
+}
+exports.findMenwatches=(req,res)=>{
+    Products.find({ category: 'men_watches' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findMenpants=(req,res)=>{
+    Products.find({ category: 'men_pants' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findMenshoes=(req,res)=>{
+    Products.find({ category: 'men_shoes' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findMenshirts=(req,res)=>{
+    Products.find({ category: 'men_shirts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findMenbelts=(req,res)=>{
+    Products.find({ category: 'men_belts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findWomenshirts=(req,res)=>{
+    Products.find({ category: 'women_shirts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findWomenskirts=(req,res)=>{
+    Products.find({ category: 'women_skirts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findWomendresses=(req,res)=>{
+    Products.find({ category: 'women_dresses' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findWomencosmetics=(req,res)=>{
+    Products.find({ category: 'women_cosmetics' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findBoypants=(req,res)=>{
+    Products.find({ category: 'boy_pants' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findBoyshirts=(req,res)=>{
+    Products.find({ category: 'boy_shirts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findGirlshirts=(req,res)=>{
+    Products.find({ category: 'girl_shirts' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findGirlpants=(req,res)=>{
+    Products.find({ category: 'girl_pants' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
+    })
+}
+exports.findSkincare=(req,res)=>{
+    Products.find({ category: 'skincare' })
+    .then(data => res.send(data))
+    .catch(err => {
+        res.status(500).send({ message: err.message })
     })
 }
 exports.find = (req, res) => {
@@ -121,3 +219,19 @@ exports.update=(req,res)=>{
         res.status(500).send({message: "Error Update!"})
     })
 }
+// exports.removebydes=(req,res)=>{
+//     if(req.query.description){
+// description= req.query.description;
+//     Products.remove({ description: { $regex: '.*' + description + '.*' } })
+//     .then((data)=>{
+//         if(data){
+//             res.send(data);
+          
+//         }else{
+//             res.status(404).send({message:`can Update Product with is not match`});
+//         }
+//     }).catch((err)=>{
+//         res.status(500).send({message: "Error Update!"})
+//     })
+// }
+// }
