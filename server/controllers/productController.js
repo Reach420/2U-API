@@ -23,8 +23,11 @@ const timenow = day + '||' + month + '||' + year
         img_url: req.body.img_url,
     })
     product.save(product)
-    .then(data=>{
+    .then(data=>{       
+         res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(data);
+
     }).catch(err=>{
         res.status(500).send({
             message : err.message || "Some error occurred while creating a create operation"
@@ -153,14 +156,6 @@ exports.find = (req, res) => {
             res.status(500).send({ message: err.message })
         })
     }
-    else if (req.query.category) {
-        const category = req.query.category
-        Products.find({category})
-        .then(data => res.send(data))
-        .catch(err => {
-            res.status(500).send({ message: err.message })
-        })
-    }
     else if (req.query.ltprice) {
         const price = req.query.ltprice
         Products.find({"price":{$lt:price}})
@@ -176,6 +171,14 @@ exports.find = (req, res) => {
         .catch(err => {
             res.status(500).send({ message: err.message })
         })
+    }
+    else if (req.query.category) {
+        const category = req.query.category
+        Products.find({ category: {$regex: '.*' + category + '.*'} })
+            .then(data => res.send(data))
+            .catch(err => {
+                res.status(500).send({ message: err.message })
+            })
     }
     else {
         Products.find()

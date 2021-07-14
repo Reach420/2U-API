@@ -13,7 +13,7 @@ const schema = new mongoose.Schema({
         type: String,
     },
     price: {
-        type: Number,
+        type: String,
         required: true,
     },
     timecreated:{
@@ -21,14 +21,15 @@ const schema = new mongoose.Schema({
     },
     discount:{
         type:String,
+        required: true,
     },
     instock:{
-        type:Number,
-        required:true,
+        type:String,
+        required: true,
     },
     img_url:{
         type:String,
-        required:true,
+        required: true,
     }
 })
 
