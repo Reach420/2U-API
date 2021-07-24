@@ -14,6 +14,8 @@ connectDB();
 // Log Request 
 app.use(morgan('tiny'));
 
+app.use(express.json());
+
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true}))
 
