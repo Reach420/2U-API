@@ -3,13 +3,20 @@ const route = express.Router();
 
 const userController = require('../controllers/userController');
 const productController = require('../controllers/productController');
-
+const orderController = require('../controllers/orderController');
 // User API 
 route.post('/api/users',userController.create);
 // route.delete('/api/users',userController.deletebyname);
 route.get('/api/users',userController.find);
 route.put('/api/users/:id',userController.update);
 route.delete('/api/users/:id',userController.delete);
+
+route.post('/api/orders',orderController.create);
+// route.delete('/api/users',userController.deletebyname);
+route.get('/api/orders',orderController.find);
+route.put('/api/orders/:id',orderController.update);
+route.delete('/api/orders/:id',orderController.delete);
+
 
 //  filter product
 route.get('/api/products/men_shirts',productController.findMenshirts)

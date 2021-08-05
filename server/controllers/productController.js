@@ -6,7 +6,7 @@ const d= new Date();
 const day = d.getDate();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
-const timenow = day + '||' + month + '||' + year
+const timenow = day + '||' + month + '||' + year    
 
     if(!req.body){
         res.status(400).send({message: `Content cannot empty`})
