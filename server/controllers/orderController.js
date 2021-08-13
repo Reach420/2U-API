@@ -13,14 +13,11 @@ const timenow = day + '||' + month + '||' + year
         return;
     }
     const order = new Orders({
-        username: req.body.username,    
-        name: req.body.name,
+        name: req.body.name,    
+        products: req.body.products,
         email: req.body.email,
         phone_number: req.body.phonenumber,
-        price:req.body.price,
         ordertime:timenow,
-        discount:req.body.discount,
-        img_url:req.body.img_url,
     })
     order.save(order)
         .then(data => {

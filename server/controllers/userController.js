@@ -10,6 +10,8 @@ exports.create = (req, res) => {
         name: req.body.name,
         email: req.body.email,
         phone_number: req.body.phone_number,
+        password:req.body.password,
+        img_url:req.body.img_url,
         gender: req.body.gender
     })
     user.save(user)

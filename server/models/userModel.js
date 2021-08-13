@@ -9,11 +9,18 @@ const schema = new mongoose.Schema({
         type:String,
         required: true,
     },
-    phone_number : {
-        type:Number,
+    phone_number: {
+        type:String,
         required: true,
     },
+    password:{
+        type:String,
+        required:true,
+    },
     gender: {
+        type:String,
+    },
+    img_url:{
         type:String,
     },
 })
