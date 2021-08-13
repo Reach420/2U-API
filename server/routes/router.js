@@ -39,4 +39,4 @@ route.delete('/api/products/:id',productController.delete);
 // route.delete('/api/products',productController.removebydes);
 route.post('/api/products',productController.create);
 route.get('/api/products',productController.find);
-module.export = route
+module.exports = route
